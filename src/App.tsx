@@ -4,6 +4,7 @@ import { Footer } from './components/layout/Footer';
 import { HomePage } from './pages/HomePage';
 import { CatalogPage } from './pages/CatalogPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
+import { AccountPage } from './pages/AccountPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/products/:slug" element={<ProductDetailPage />} />
           <Route path="/categories/:slug" element={<CatalogPage mode="category" />} />
           <Route path="/collections/:slug" element={<CatalogPage mode="collection" />} />
+          <Route path="/account" element={<AccountPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

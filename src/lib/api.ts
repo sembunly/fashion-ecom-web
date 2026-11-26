@@ -15,6 +15,34 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
+export interface AuthUser {
+  id: number;
+  username: string;
+  email: string;
+  firstName?: string | null;
+  lastName?: string | null;
+}
+
+export interface AuthResponse {
+  accessToken: string;
+  refreshToken: string;
+  tokenType: string;
+  expiresIn: number;
+  user: AuthUser;
+}
+
+export const login = (username: string, password: string): Promise<AuthResponse> =>
+  api.post<AuthResponse>('/auth/login', { username, password }).then(r => r.data);
+
+export const register = (payload: {
+  username: string;
+  email: string;
+  password: string;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+}): Promise<AuthResponse> => api.post<AuthResponse>('/auth/register', payload).then(r => r.data);
+
 // ── Navigation ────────────────────────────────────────────
 export const fetchNavigation = (): Promise<NavigationItemResponse[]> =>
   api.get<NavigationItemResponse[]>('/navigation').then(r => r.data);
