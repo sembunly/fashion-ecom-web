@@ -5,6 +5,8 @@ import { HomePage } from './pages/HomePage';
 import { CatalogPage } from './pages/CatalogPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
 import { AccountPage } from './pages/AccountPage';
+import { SignInPage } from './pages/SignInPage';
+import { RegisterPage } from './pages/RegisterPage';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/categories/:slug" element={<CatalogPage mode="category" />} />
           <Route path="/collections/:slug" element={<CatalogPage mode="collection" />} />
           <Route path="/account" element={<AccountPage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
