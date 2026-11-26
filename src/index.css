@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --avenzo-black: #0a0a0a;
+    --avenzo-white: #fdfcf9;
+    --avenzo-beige: #cbbba0;
+    --avenzo-gray: #6b6b6b;
+    --avenzo-light: #f5f2eb;
+    --avenzo-border: #e7e1d7;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--avenzo-white);
+    color: var(--avenzo-black);
+  }
+
+  #root {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    border: none;
+    max-width: none;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin: 0;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  img { display: block; max-width: 100%; }
+}
+
+/* ── Swiper / carousel helpers ─────────────────────────── */
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .text-avenzo-black { color: var(--avenzo-black); }
+  .text-avenzo-gray  { color: var(--avenzo-gray); }
+  .text-avenzo-beige { color: var(--avenzo-beige); }
+  .bg-avenzo-black   { background-color: var(--avenzo-black); }
+  .bg-avenzo-light   { background-color: var(--avenzo-light); }
+  .border-avenzo     { border-color: var(--avenzo-border); }
+}
